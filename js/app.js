@@ -38,7 +38,7 @@ const game = {
 
 
 class Tamagotchi{
-	constructor(Hunger, Cleanliness, Boredom, age){
+	constructor(hunger, cleanliness, boredom, age){
 		this
 
 	}

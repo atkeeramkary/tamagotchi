@@ -23,14 +23,19 @@
 	margin-left: 25px;
 	top: 5%;
 	margin-top: 10px;
+	background-image: url("https://cdn.pixabay.com/photo/2018/01/30/22/48/torrent-3119822_1280.jpg");
+	background-size: contain;
+
 
 
 
 
 }
 
-.image {
-   content: url (https://goo.gl/images/kQFLqh)
+.image img {
+	height: 200px;
+	width: 200px;
+	justify-content: center;
 }
 
 #toFeedButton {
