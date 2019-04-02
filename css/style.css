@@ -1,7 +1,7 @@
 #Zoo{
 	background-color: crimson;
-	height: 700px;
-	width: 700px;
+	height: 800px;
+	width: 800px;
 	position: relative;
 	justify-content: center;
 	text-align: center;
@@ -26,11 +26,24 @@
 
 
 
+
 }
 
+.image {
+   content: url (https://goo.gl/images/kQFLqh)
+}
 
+#toFeedButton {
+	background-color: orange;
 
-// set interval if 1000
+}
 
+#toCleanButton{
+	background-color: blue;
 
+}
 
+#toPlayButton{
+	background-color: black;
+
+}
