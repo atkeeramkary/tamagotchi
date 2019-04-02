@@ -1,0 +1,36 @@
+#Zoo{
+	background-color: crimson;
+	height: 700px;
+	width: 700px;
+	position: relative;
+	justify-content: center;
+	text-align: center;
+
+}
+
+#Habitat{
+	background-color: aquamarine;
+
+	height: 600px;
+	width: 600px;
+	display: flex;
+	
+	/*justify-content: center;
+	display: inline-block;*/
+
+	position: absolute;
+	left: 5%;
+	margin-left: 25px;
+	top: 5%;
+	margin-top: 10px;
+
+
+
+}
+
+
+
+// set interval if 1000
+
+
+
