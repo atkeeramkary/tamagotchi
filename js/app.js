@@ -10,50 +10,19 @@ class Tamagotchi{
 
 	}
 	feed() {
-		this.hunger ++
+		this.hunger++
 	}
 	clean() {
-		this.cleanliness ++
+		this.cleanliness++
 	}
 	attention() {
-		this.boredom ++
+		this.boredom++
 	}
 
 
 } 
 
-const tom1 = new Tamagotchi()
 
-$('#toFeedButton').on('click', () => {
-	tom1.feed()
-
-	console.log(tom1);
-		
-		
-		console.log('click works')
-  	})
-		//this code will register clicks to the FeedMe button which will then feed the creature
-	// evidenced by the feed counter going up by 2 pts out of 10
-
-
-$('#toCleanButton').on('click', () => {
-	tom1.clean()
-
-	console.log(tom1);
-		
-		
-		console.log('click works')
-  	})
-
-
-$('#toPlayButton').on('click', () => {
-	tom1.attention()
-
-	console.log(tom1);
-		
-		
-		console.log('click works')
-  	})
 
 
 const game = {
@@ -92,8 +61,21 @@ const game = {
 	// 		alert('Your Tamagotchi has died')
 	// 	}
 		
-	// }	
+	// }
+	lifeCheck: function() {
+        if(this.currentPlayer.boredom === 0 || this.currentPlayer.hunger === 0 || this.currentPlayer.cleanliness === 0) {
+            this.isAlive = false
+        }
+    },	
+	gameOver() { 
+        if(!this.isAlive) {
+            
+            $('#gameover').text("GAME OVER!!!" );
+            clearInterval(this.interval);
 
+        }
+    },
+	
 
 	stats(){
 		if (this.time !== 0){
@@ -108,23 +90,24 @@ const game = {
 	start() {
 
 		// instantiate the tomagotchi
-			const create = new Tamagotchi('Moana') // instantiation
-			this.currentPet = create
-			console.log()
+		const create = new Tamagotchi('Moana') // instantiation
+		this.currentPet = create
+		console.log()
+
 		// console.log() it to get it working
 			
 
-			
-			
-				  // call a method in game object called start
-			 	setInterval(function(){
-			 		console.log(game.currentPet)
-			 		game.hunger()
-			 		game.cleanliness()
-			 		game.attention()
-			 		game.age()
-			 		game.time++
-			 	}, 1000) 
+	
+	
+		 // call a method in game object called start
+	 	setInterval(function(){
+	 		console.log(game.currentPet)
+	 		game.hunger()
+	 		game.cleanliness()
+	 		game.attention()
+	 		game.age()
+	 		game.time++
+	 	}, 1000) 
 		// This is the central force behind gameplay. This function recognizes the passage of time by ticking
 		// down the hunger, cleanliness and boredom meter by 1pts every unit of time.  
 
@@ -132,44 +115,44 @@ const game = {
 
 		// make the tomagatchi it creates be a property of the game object
 
-	feedMe: function() {
-		$('#toFeedButton').on('click', () => {
+	// feedMe: function() {
+	// 	$('#toFeedButton').on('click', () => {
 	
 				
   				
   				
-  				console.log('click works')
-			  	})
-		//this code will register clicks to the FeedMe button which will then feed the creature
-	// evidenced by the feed counter going up by 2 pts out of 10
-	},
+ //  				console.log('click works')
+	// 	})
+	// 	//this code will register clicks to the FeedMe button which will then feed the creature
+	// // evidenced by the feed counter going up by 2 pts out of 10
+	// },
 
-	cleanMe: function() {
-		$('#toCleanButton').on('click', () => {
+	// cleanMe: function() {
+	// 	$('#toCleanButton').on('click', () => {
 	
 				
   				
   				
-  				console.log('click works')
-			  	})
+ //  				console.log('click works')
+	// 		  	})
 
-		// this code will register clicks to the CleanMe button which will then clean the creature
-	// evidenced by the clean counter going up by 2 pts out of 10
+	// 	// this code will register clicks to the CleanMe button which will then clean the creature
+	// // evidenced by the clean counter going up by 2 pts out of 10
 
-	},
+	// },
 
-	playWithMe: function() {
-		// this code will register clicks to the PlayWithMe button which will then play with the creature
-		// evidenced by the playsatisfaction counter going up by 2 pts out of 10
-		$('#toPlayButton').on('click', () => {
+	// playWithMe: function() {
+	// 	// this code will register clicks to the PlayWithMe button which will then play with the creature
+	// 	// evidenced by the playsatisfaction counter going up by 2 pts out of 10
+	// 	$('#toPlayButton').on('click', () => {
 	
 				
   				
   				
-  				console.log('click works')
-			  	})
+ //  				console.log('click works')
+	// 		  	})
 
-	},
+	// },
 
 	evolve: function () {
 		// this code will change the creature's appearance when they reach certain age or meter milestones
@@ -178,6 +161,41 @@ const game = {
 
 
 }
+
+
+
+$('#toFeedButton').on('click', () => {
+	game.currentPet.feed()
+
+	console.log(game.currentPet);
+		
+	console.log('click works')
+})
+		//this code will register clicks to the FeedMe button which will then feed the creature
+	// evidenced by the feed counter going up by 2 pts out of 10
+
+
+$('#toCleanButton').on('click', () => {
+	game.currentPet.clean()
+
+	console.log(game.currentPet);
+		
+	console.log('click works')
+})
+
+
+$('#toPlayButton').on('click', () => {
+	game.currentPet.attention()
+
+	console.log(game.currentPet);
+		
+		
+	console.log('click works')
+})
+
+
+
+
 
 
 
