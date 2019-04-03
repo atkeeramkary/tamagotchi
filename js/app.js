@@ -65,10 +65,10 @@ const game = {
 	// }
 	lifeCheck: function() {
 
-		console.log("lifeCheck being called");
+		//console.log("lifeCheck being called");
         if(this.currentPet.boredom === 0 || this.currentPet.hunger === 0 || this.currentPet.cleanliness === 0) {
 
-        	console.log("got into - if statement -- he should die here");
+        	//console.log("got into - if statement -- he should die here");
             this.isAlive = false
         }
     },	
