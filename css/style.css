@@ -21,7 +21,7 @@
 	position: absolute;
 	left: 5%;
 	margin-left: 25px;
-	top: 5%;
+	top: 10%;
 	margin-top: 10px;
 	background-image: url("https://cdn.pixabay.com/photo/2018/01/30/22/48/torrent-3119822_1280.jpg");
 	background-size: contain;
@@ -49,6 +49,6 @@
 }
 
 #toPlayButton{
-	background-color: black;
+	background-color: white;
 
 }
