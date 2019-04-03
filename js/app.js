@@ -78,11 +78,11 @@ const game = {
 	
 
 	stats(){
-		if (this.time !== 0){
-			$('#hunger').text('Hunger: ' + game.currentPet.hunger)
-			$('#cleanliness').text('Cleanliness: ' + game.currentPet.cleanliness)
-			$('#boredom').text('Boredom: ' + game.currentPet.boredom)
-		}
+
+		$('#hunger').text('Hunger: ' + game.currentPet.hunger)
+		$('#cleanliness').text('Cleanliness: ' + game.currentPet.cleanliness)
+		$('#boredom').text('Boredom: ' + game.currentPet.boredom)
+
 	},
 
 
@@ -107,6 +107,7 @@ const game = {
 	 		game.attention()
 	 		game.age()
 	 		game.time++
+	 		game.stats()
 	 	}, 1000) 
 		// This is the central force behind gameplay. This function recognizes the passage of time by ticking
 		// down the hunger, cleanliness and boredom meter by 1pts every unit of time.  
