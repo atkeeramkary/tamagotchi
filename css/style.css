@@ -29,8 +29,14 @@
 
 
 
-
 }
+
+#gameover {
+
+	background-color: lightblue;
+	font-size: 100px
+}
+
 
 .image img {
 	height: 200px;

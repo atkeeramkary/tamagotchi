@@ -29,6 +29,7 @@ const game = {
 	time: 0,
 	interval: null,
 	currentPet: null,
+	isAlive: true,
 
 	hunger(){
 		if (this.time % 5 === 0) { 
@@ -63,12 +64,19 @@ const game = {
 		
 	// }
 	lifeCheck: function() {
-        if(this.currentPlayer.boredom === 0 || this.currentPlayer.hunger === 0 || this.currentPlayer.cleanliness === 0) {
+
+		console.log("lifeCheck being called");
+        if(this.currentPet.boredom === 0 || this.currentPet.hunger === 0 || this.currentPet.cleanliness === 0) {
+
+        	console.log("got into - if statement -- he should die here");
             this.isAlive = false
         }
     },	
 	gameOver() { 
+		console.log('gameOver called')
         if(!this.isAlive) {
+
+        	// console.log("if statement -- not alive -- timer should stop now");
             
             $('#gameover').text("GAME OVER!!!" );
             clearInterval(this.interval);
@@ -87,6 +95,7 @@ const game = {
 
 
 
+
 	start() {
 
 		// instantiate the tomagotchi
@@ -100,7 +109,7 @@ const game = {
 	
 	
 		 // call a method in game object called start
-	 	setInterval(function(){
+	 	const x = setInterval(function(){
 	 		console.log(game.currentPet)
 	 		game.hunger()
 	 		game.cleanliness()
@@ -108,7 +117,15 @@ const game = {
 	 		game.age()
 	 		game.time++
 	 		game.stats()
-	 	}, 1000) 
+	 		game.lifeCheck()
+	 		game.gameOver()
+
+	 	}, 500)
+
+	 	// make the interval we are using to stop the game be the x value we just captured from the return
+	 	// from our call to setInterval
+
+	 	this.interval = x
 		// This is the central force behind gameplay. This function recognizes the passage of time by ticking
 		// down the hunger, cleanliness and boredom meter by 1pts every unit of time.  
 
@@ -209,5 +226,24 @@ $(document).on('click', (e) => {
 $('#submnit-btn').on('click', () => {
  	game.start()
  })
+
+
+
+const printName = (name) => {
+	// the value of name inside this function
+	// will be equal to whatever was passed in as an argument while the function was called
+	console.log(name)
+}
+
+
+
+// inside of a method on an object, "this" refers to the object
+const anil = {
+	faveFood: "chocolate cookies",
+	getFaves: function() {
+		console.log(`Anil's favorite food is ${this.faveFood}`);
+	}
+}
+cleanliness
 
 
